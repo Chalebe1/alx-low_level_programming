@@ -2,11 +2,11 @@
 /**
  *main function
  *using puts to disply characters
- *return (0) Always
+ *return: Always 0 Sucess
  */
 
 int main(void)
 {
-	puts("programming is like a building multilingual puzzle");
+	puts("programming is like building multilingual puzzle");
 	return (0);
 }
