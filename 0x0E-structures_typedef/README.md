@@ -1,1 +1,1 @@
-STRUCTURE AND TYPE DEF IN C 
+C - Structures, typedef Project
