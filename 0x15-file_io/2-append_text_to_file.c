@@ -20,7 +20,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	{
 		close(o);
 		return (1);
-	}	
+	}
 	for (len = 0; text_content[len];)
 		len++;
 	w = write(o, text_content, len);
