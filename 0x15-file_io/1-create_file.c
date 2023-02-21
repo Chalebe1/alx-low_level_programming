@@ -4,6 +4,7 @@ int create_file(const char *filename, char *text_content)
 {
 	int o;
 	ssize_t w;
+	ssize_t len;
 
 	if (filename == NULL)
 		return (-1);
@@ -15,8 +16,9 @@ int create_file(const char *filename, char *text_content)
 	o = open(filename, O_CREAT | O_WRONLY | O_EXCL | O_TRUNC ,0600);
 	if (o == -1)
 		return (-1);
-	w = write(o,text_content,strlen(text_content));
-		if (w != strlen(text_content))
+	len = strlen(text_content);
+	w = write(o, text_content, len);
+		if (w != len)
 		{
 			close(o);
 			return (-1);
