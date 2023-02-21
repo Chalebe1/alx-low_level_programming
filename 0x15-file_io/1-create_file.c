@@ -2,7 +2,8 @@
 #include <stdlib.h>
 int create_file(const char *filename, char *text_content)
 {
-	int o,w;
+	int o;
+	ssize_t w;
 
 	if (filename == NULL)
 		return (-1);
@@ -15,8 +16,9 @@ int create_file(const char *filename, char *text_content)
 	if (o == -1)
 		return (-1);
 	w = write(o,text_content,strlen(text_content));
-		if (w == -1)	
+		if (w == -1)
+			close(o);
 			return (-1);
-
+	close(0);
 	return (1);
 }	
